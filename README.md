@@ -1,34 +1,42 @@
-# 🛡 SafeGuard — Safety MVP App
+# 🛡 SafeGuard
+### Personal Safety MVP App using React Native, Expo & Firebase
 
-A React Native mobile application built with Expo and Firebase for personal safety management.
+SafeGuard is a mobile safety application built using React Native and Expo.  
+The app provides emergency SOS alerts, GPS location tracking, OTP-based login flow, and incident reporting features integrated with Firebase Firestore.
 
 ---
 
-## Features
+## ✨ Features
 
 - **User Registration** — Mobile number + password signup
-- **OTP Verification** — Static OTP (123456) for demo
-- **User Login** — Authenticated via Firebase Firestore
-- **SOS Emergency** — One-tap SOS alert with timestamp saved to Firebase
-- **GPS Tracking** — Fetch and log current latitude/longitude
-- **Incident Reporting** — Report incidents with type, description, image, and auto location
+- **OTP Verification** — Static OTP (`123456`) for demo purposes
+- **User Login** — Authentication using Firebase Firestore
+- **SOS Emergency Alert** — One-tap emergency SOS trigger with timestamp logging
+- **GPS Tracking** — Fetch and store live latitude & longitude
+- **Incident Reporting** — Report incidents with:
+  - Incident type
+  - Description
+  - Image upload
+  - Auto-detected location
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
-| Layer      | Technology              |
-|------------|-------------------------|
-| Frontend   | React Native + Expo     |
-| Navigation | React Navigation v6     |
-| Database   | Firebase Firestore      |
-| Location   | expo-location           |
-| Images     | expo-image-picker       |
+| Layer        | Technology                |
+|---------------|---------------------------|
+| Frontend      | React Native + Expo       |
+| Navigation    | React Navigation v6       |
+| Backend       | Firebase Firestore        |
+| Location API  | expo-location             |
+| Image Picker  | expo-image-picker         |
 
 ---
 
-## Project Structure
----SafeGuard/
+## 📁 Project Structure
+
+```bash
+SafeGuard/
 ├── App.js
 ├── firebase.js
 ├── screens/
@@ -40,57 +48,101 @@ A React Native mobile application built with Expo and Firebase for personal safe
 │   ├── GPSScreen.js
 │   └── IncidentScreen.js
 └── components/
-└── CustomAlert.js
+    └── CustomAlert.js
+```
 
-## Setup Instructions
+---
+
+## ⚙️ Setup Instructions
 
 ### Prerequisites
+
+Make sure you have installed:
+
 - Node.js v20.19.4 or higher
 - Expo CLI
 - Firebase account
-
-### Installation
-
-1. Clone the repository
-```bash
-   git clone https://github.com/YOURUSERNAME/SafeGuard.git
-   cd SafeGuard
-```
-
-2. Install dependencies
-```bash
-   npm install --legacy-peer-deps
-```
-
-3. Configure Firebase
-   - Go to https://console.firebase.google.com
-   - Create a new project
-   - Add a Web app and copy the config
-   - Paste config into `firebase.js`
-   - Enable Firestore Database in test mode
-
-4. Start the app
-```bash
-   npx expo start
-```
-
-5. Scan QR code with **Expo Go** app on your phone
+- Expo Go app (Android/iOS)
 
 ---
 
-## Demo Credentials
+## 🚀 Installation
 
-| Field    | Value        |
-|----------|--------------|
-| Phone    | 9876543210   |
-| Password | demo123      |
-| OTP      | 123456       |
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/prathmesh703/SafeGuard.git
+cd SafeGuard
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install --legacy-peer-deps
+```
+
+### 3. Configure Firebase
+
+1. Go to: https://console.firebase.google.com
+2. Create a new Firebase project
+3. Add a **Web App**
+4. Copy Firebase configuration
+5. Paste config into `firebase.js`
+6. Enable **Firestore Database**
+7. Start Firestore in **test mode**
+
+Example:
+
+```javascript
+// firebase.js
+
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_BUCKET",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+};
+
+const app = initializeApp(firebaseConfig);
+
+export default app;
+```
 
 ---
 
-## Firebase Collections
+## ▶️ Run the App
 
-| Collection   | Data Stored                          |
+Start Expo development server:
+
+```bash
+npx expo start
+```
+
+Then:
+
+- Open **Expo Go** app on your mobile
+- Scan the QR code
+- App will launch on your device
+
+---
+
+## 🔐 Demo Credentials
+
+| Field      | Value      |
+|------------|------------|
+| Phone      | 9876543210 |
+| Password   | demo123    |
+| OTP        | 123456     |
+
+---
+
+## ☁️ Firebase Collections
+
+| Collection   | Stored Data                          |
 |--------------|--------------------------------------|
 | users        | phone, password, createdAt           |
 | sos_events   | type, timestamp, displayTime         |
@@ -99,22 +151,48 @@ A React Native mobile application built with Expo and Firebase for personal safe
 
 ---
 
-## APK Download
+## 📸 Screenshots
 
-[Download APK](YOUR_EAS_BUILD_LINK_HERE)
+_Add screenshots here after uploading images to your repository._
 
----
+Example:
 
-## Notes
-
-- Passwords stored as plain text for demo purposes only
-- In production, use Firebase Authentication with hashed passwords
-- OTP is static (123456) — production should use Firebase Phone Auth
-- Firestore rules set to open for development only
+```markdown
+![Login Screen](screenshots/login.png)
+![Dashboard Screen](screenshots/dashboard.png)
+```
 
 ---
 
-## Developer
+## 📦 APK Download
+
+Add your Expo EAS APK link here after build generation.
+
+```markdown
+[Download APK](YOUR_APK_LINK_HERE)
+```
+
+---
+
+## ⚠️ Important Notes
+
+- Passwords are stored as plain text for demo purposes only
+- OTP is static (`123456`) for testing/demo
+- Firestore rules are currently open for development
+- For production:
+  - Use Firebase Authentication
+  - Use encrypted/hashed passwords
+  - Use Firebase Phone Authentication
+  - Secure Firestore rules properly
+
+---
+
+## 👨‍💻 Developer
 
 **Prathmes Kolpe**  
-Assignment submission — Safety MVP Module
+Safety MVP Assignment Submission
+
+GitHub:  
+https://github.com/prathmesh703
+
+---
