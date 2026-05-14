@@ -28,8 +28,7 @@ A React Native mobile application built with Expo and Firebase for personal safe
 ---
 
 ## Project Structure
----
-SafeGuard/
+---SafeGuard/
 ├── App.js
 ├── firebase.js
 ├── screens/
